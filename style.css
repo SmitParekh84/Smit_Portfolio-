@@ -317,8 +317,8 @@ h2 span {
 }
 
 #hero h1:nth-child(3) span {
-    animation: text_reveal_box 2.1s ease-in-out infinite;
-    animation-delay: 2.2s;
+    animation: text_reveal_box 2s ease-in-out infinite;
+    animation-delay: 2s;
 }
 
 
@@ -1046,6 +1046,30 @@ a {
 /* End Media Query For Tablet */
 
 @media only screen and (max-width: 768px) {
+    #hero .hero {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+        justify-content: flex-start;
+    }
+    #hero h1 {
+        display: block;
+        width: fit-content;
+        font-size: 4rem;
+        position: relative;
+        color: transparent;
+    }
+    #hero h2 {
+        display: block;
+        width: fit-content;
+        font-size: 2rem;
+        position: relative;
+        color: transparent;
+    }
+    #hero h1:nth-child(3) span {
+        animation: text_reveal_box 2s ease-in-out infinite;
+        animation-delay: 2s;
+    }
     #services .service-item .icon {
         height: 45px;
         width: 45px;
