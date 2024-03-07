@@ -494,6 +494,7 @@ h2 span {
     flex-direction: column;
     background-image: linear-gradient(60deg, #CD5AED 220%, #FFE7FF 100%);
     color: white;
+    border-radius: 20px;
 }
 
 #projects .project-info h1 {
@@ -526,12 +527,17 @@ h2 span {
     top: 0;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(60deg, #16001E 50%, #CD5AED 200%);
+    /* background-image: linear-gradient(60deg, #16001E 50%, #CD5AED 200%); */
     opacity: 0.7;
 }
 
 #projects .project-img img {
+    padding: 60px;
+    object-fit: scale-down;
+    object-position: center;
     transition: 0.3s ease transform;
+    margin: auto;
+    display: block;
 }
 
 #projects .project-item:hover .project-img img {
