@@ -10,22 +10,47 @@ hamburger.addEventListener('click', () => {
 
 // for skill animation
 
-const names = ['Web Designer', 'Video Editor', 'Social-Media Manager', 'Graphic Designer']; // Define the names to cycle through
-const delay = 2000; // Set the delay to 1 second (1000 milliseconds)
+document.addEventListener('DOMContentLoaded', function(event) {
+    // array with texts to type in typewriter
+    var dataText = ["Web Developer.", "Video Editor.", "Social-Media Manager.", "Graphic Designer"];
 
-let currentIndex = 0; // Initialize the current index
+    // type one text in the typewriter
+    // keeps calling itself until the text is finished
+    function typeWriter(text, i, element, fnCallback) {
+        // check if text isn't finished yet
+        if (i < (text.length)) {
+            // add next character to the target element
+            element.innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
 
-function updateName() {
-    const nameElement = document.getElementById('name');
-    nameElement.textContent = names[currentIndex]; // Display the name at the current index
-    currentIndex = (currentIndex + 1) % names.length; // Move to the next index (loop back to 0 if needed)
-}
+            // wait for a while and call this function again for the next character
+            setTimeout(function() {
+                typeWriter(text, i + 1, element, fnCallback)
+            }, 100);
+        } else if (typeof fnCallback == 'function') {
+            // text finished, call callback if there is a callback function
+            setTimeout(fnCallback, 700);
+        }
+    }
 
-// Call updateName initially
-updateName();
+    // start a typewriter animation for a text in the dataText array
+    function startTextAnimation(i) {
+        var targetElement = document.getElementById('typed-text');
+        if (typeof dataText[i] == 'undefined') {
+            setTimeout(function() {
+                startTextAnimation(0);
+            }, 20000);
+        } else if (i < dataText.length) {
+            // text exists! start typewriter animation
+            typeWriter(dataText[i], 0, targetElement, function() {
+                // after callback (and whole text has been animated), start next text
+                startTextAnimation(i + 1);
+            });
+        }
+    }
 
-// Set interval to continuously update the name
-setInterval(updateName, delay);
+    // start the text animation
+    startTextAnimation(0);
+});
 
 
 // end skill animation

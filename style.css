@@ -275,6 +275,18 @@ h2 {
     color: transparent;
 }
 
+#hero .typed-text {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+    color: #CD5AED;
+}
+
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
 #hero h1,
 h2:nth-child(1) {
     animation: text_reveal 2.5s ease forwards;
@@ -284,11 +296,6 @@ h2:nth-child(1) {
 #hero h1:nth-child(2) {
     animation: text_reveal 2.5s ease forwards;
     animation-delay: 1.5s;
-}
-
-#hero h1:nth-child(3) {
-    animation: text_reveal_name 2s ease-in-out infinite;
-    animation-delay: 0.1s;
 }
 
 #hero h1 span,
@@ -314,11 +321,6 @@ h2 span {
 #hero h1:nth-child(2) span {
     animation: text_reveal_box 1.5s ease-in-out forwards;
     animation-delay: 1s;
-}
-
-#hero h1:nth-child(3) span {
-    animation: text_reveal_box 2s ease-in-out infinite;
-    animation-delay: 2s;
 }
 
 
