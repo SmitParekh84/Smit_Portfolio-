@@ -319,7 +319,7 @@ h2 span {
 }
 
 #hero h1:nth-child(2) span {
-    animation: text_reveal_box 1.5s ease-in-out forwards;
+    animation: text_reveal_box 1.5s ease forwards;
     animation-delay: 1s;
 }
 
