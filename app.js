@@ -53,11 +53,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
     startTextAnimation(0);
 });
 
-
-
-
 // end skill animation
 
+// start scroll animation
 $(document).ready(function() {
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {
@@ -122,6 +120,22 @@ document.getElementById("downloadLink").addEventListener("click", function(event
     }
 });
 
+$(document).ready(function() {
+    // Show or hide the button based on the user's scroll position
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('#scrollToTopBtn').fadeIn();
+        } else {
+            $('#scrollToTopBtn').fadeOut();
+        }
+    });
+
+    // Scroll to the top when the button is clicked
+    $('#scrollToTopBtn').click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        return false;
+    });
+});
 
 // Add video
 // document.addEventListener('DOMContentLoaded', function() {
