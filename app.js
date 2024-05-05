@@ -36,14 +36,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
     function startTextAnimation(i) {
         var targetElement = document.getElementById('typed-text');
         if (typeof dataText[i] == 'undefined') {
+            // If end of array is reached, start again from the beginning
             setTimeout(function() {
                 startTextAnimation(0);
             }, 20000);
-        } else if (i < dataText.length) {
+        } else {
             // text exists! start typewriter animation
             typeWriter(dataText[i], 0, targetElement, function() {
                 // after callback (and whole text has been animated), start next text
-                startTextAnimation(i + 1);
+                startTextAnimation((i + 1) % dataText.length); // Increment i in a circular manner
             });
         }
     }
@@ -51,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     // start the text animation
     startTextAnimation(0);
 });
+
 
 
 // end skill animation
