@@ -1,3 +1,13 @@
+var contactSection = document.getElementById('contact');
+if (contactSection.style.display === 'block') {
+    // If contact section is visible, set href to #contact
+    document.getElementById('contact-link').href = '#contact';
+} else {
+    // If contact section is hidden, set href to #email-reg
+    document.getElementById('contact-link').href = '#email-reg';
+}
+
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyCq3dmPDdCTuuPbssl9XFt5yFy-uc41pkc",
