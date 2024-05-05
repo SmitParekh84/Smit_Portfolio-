@@ -9,6 +9,7 @@
 
     <meta property="og:image" content="./img/undraw_blogging_re_kl0d.svg">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="email.css">
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-filled/50/FFFFFF/document-1.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -294,7 +295,7 @@
     <!-- End About Section -->
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" style="display: none;">
         <div class="contact container">
             <div>
                 <h1 class="section-title">Contact <span>info</span></h1>
@@ -321,6 +322,23 @@
                         <h2>388001, Anand, Gujarat, India </h2>
                     </div>
                 </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="email-reg" style="display: block;">
+        <div>
+            <h1 class="section-title">Contact <span>info</span></h1>
+        </div>
+        <div id="form_content_container">
+            <div id="form_content_inner_container">
+                <input type="text" id="full_name" placeholder="Full name">
+                <input type="email" id="email" placeholder="Email">
+
+                <div id="button_container">
+                    <button id="register_button" onclick="register()">Show Contact Information</button>
+                </div>
+                <div id="table_container"></div>
             </div>
         </div>
     </section>
@@ -368,14 +386,26 @@
 
 
 
-            <p>Copyright © 2024 Smit. All rights reserved</p>
+            <p>&copy; 2024 Smit Parekh. All rights reserved</p>
         </div>
 
     </section>
 
     <!-- End Footer -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <!-- Our script must be loaded after firebase references -->
+    <script src="email.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./app.js"></script>
+
 </body>
 
 </html>
