@@ -272,7 +272,7 @@ h2 {
     width: fit-content;
     font-size: 4rem;
     position: relative;
-    /* color: transparent; */
+    color: transparent;
 }
 
 #hero .typed-text {
@@ -594,6 +594,27 @@ h2 span {
 
 /* End Video Gallery */
 
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #CD5AED;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#scrollToTopBtn i {
+    margin-top: 6px;
+    /* Adjust the icon position as needed */
+}
+
 
 /* About Section */
 
@@ -830,7 +851,7 @@ h2 span {
 .socialContainer {
     width: 52px;
     height: 52px;
-    background-color: rgb(127, 41, 130);
+    background-color: #CD5AED;
     display: flex;
     align-items: center;
     justify-content: center;
