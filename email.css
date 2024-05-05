@@ -1,0 +1,62 @@
+#form_content_container {
+    background-color: #f0f0f0;
+    /* Background color */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Add padding for better spacing */
+    width: 300px;
+    /* Set a specific width for the container */
+    margin: 20px auto;
+    /* Center the container horizontally */
+}
+
+
+/* Style input fields */
+
+#full_name,
+#email {
+    width: 100%;
+    /* Make inputs fill the container width */
+    padding: 10px;
+    /* Add padding for better spacing */
+    margin-bottom: 10px;
+    /* Add margin between inputs */
+    border: 1px solid #ccc;
+    /* Add a border */
+    border-radius: 5px;
+    /* Rounded corners for inputs */
+}
+
+
+/* Style register button */
+
+#register_button {
+    padding: 10px 20px;
+    /* Add padding for buttons */
+    border: none;
+    /* Remove default button border */
+    background-color: #CD5AED;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
+    border-radius: 5px;
+    /* Rounded corners for buttons */
+    cursor: pointer;
+    /* Add cursor pointer on hover */
+}
+
+
+/* Style register button on hover */
+
+#register_button:hover {
+    background-color: #a649c0;
+    /* Darker background color on hover */
+}
+
+
+/* Center the button */
+
+#button_container {
+    text-align: center;
+}
