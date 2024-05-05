@@ -272,7 +272,7 @@ h2 {
     width: fit-content;
     font-size: 4rem;
     position: relative;
-    color: transparent;
+    /* color: transparent; */
 }
 
 #hero .typed-text {
@@ -551,6 +551,45 @@ h2 span {
 
 
 /* Video Gallery */
+
+#projects .project-vid {
+    flex: 1;
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(60deg, #CD5AED 220%, #FFE7FF 100%);
+    color: white;
+}
+
+#projects .project-vid h1 {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+#projects .project-vid h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#projects .project-vid p {
+    color: white;
+}
+
+#projects .project-img iframe {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#projects .project-info span.black {
+    color: black;
+}
 
 
 /* End Video Gallery */
