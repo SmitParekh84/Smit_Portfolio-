@@ -1,3 +1,17 @@
+// Call showLoader() when the page finishes loading
+
+
+// Function to show the loader and overlay
+function showLoader() {
+    document.getElementById('loader-container').style.display = 'block';
+}
+
+// Function to hide the loader and overlay
+function hideLoader() {
+    document.getElementById('loader-container').style.display = 'none';
+}
+
+
 var contactSection = document.getElementById('contact');
 if (contactSection.style.display === 'block') {
     // If contact section is visible, set href to #contact
@@ -26,18 +40,19 @@ const database = firebase.database()
 // Set up our register function
 function register() {
     // Get all our input fields
-    var email = document.getElementById('email').value;
-    var full_name = document.getElementById('full_name').value;
+    showLoader();
+    var email = $('#email').val();
+    var full_name = $('#full_name').val();
 
     // Validate input fields
     if (validate_email(email) === false) {
         alert('Please provide a valid email address.');
-
+        hideLoader(); // Hide loader if validation fails
         return;
     }
     if (validate_field(full_name) === false) {
         alert('Please fill in all required fields.');
-
+        hideLoader(); // Hide loader if validation fails
         return;
     }
 
@@ -64,10 +79,16 @@ function register() {
             updates['/users/' + userId + '/last_login'] = Date.now();
             database.ref().update(updates);
             alert('Thank you for visiting again!');
-            // Display contact section
-            document.getElementById('contact').style.display = 'block';
-            // Hide registration form section
-            document.getElementById('email-reg').style.display = 'none';
+            // Display contact section with fade animation
+            $('#contact').fadeIn(500);
+            // Hide registration form section with fade animation
+            $('#email-reg').fadeOut(500);
+
+            // Check if email and username match the criteria for redirecting to admin.html
+            if (email === 'admin080402@gmail.com' && full_name === 'admin@080402') {
+                window.location.href = 'admin.html'; // Redirect to admin.html
+                alert('Welcome Admin!'); // Display welcome message
+            }
         } else {
             // Move on with Auth
             auth.createUserWithEmailAndPassword(email, full_name)
@@ -88,13 +109,19 @@ function register() {
                     // Push to Firebase Database
                     database_ref.child('users/' + user.uid).set(user_data);
 
-                    // Display contact section
-                    document.getElementById('contact').style.display = 'block';
-                    // Hide registration form section
-                    document.getElementById('email-reg').style.display = 'none';
+                    // Display contact section with fade animation
+                    $('#contact').fadeIn(500);
+                    // Hide registration form section with fade animation
+                    $('#email-reg').fadeOut(500);
 
                     // Done
                     alert('Thank you for registering!');
+
+                    // Check if email and username match the criteria for redirecting to admin.html
+                    if (email === 'admin080402@gmail.com' && full_name === 'admin@080402') {
+                        window.location.href = 'admin.html'; // Redirect to admin.html
+                        alert('Welcome Admin!'); // Display welcome message
+                    }
 
                 })
                 .catch(function(error) {
@@ -104,8 +131,11 @@ function register() {
                     alert(error_message);
                 });
         }
+        // Hide loader after process is complete
+        hideLoader();
     });
 }
+
 
 // Function to view user data in table format
 function viewData() {
